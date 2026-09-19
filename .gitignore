@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+venv/
+.env
+staticfiles/
+*.log
+.vscode/
+
+# SQLite journal files. The data lives in db.sqlite3 itself; a stale
+# journal committed alongside it can shadow or corrupt that data.
+db.sqlite3-shm
+db.sqlite3-wal
+
+# Locally generated signing key. Never commit a signing key.
+.secret_key
+
+# The database is never committed. It carries password hashes and customer
+# phone numbers, and a pull would overwrite whatever the live site holds.
+# A fresh install builds one with: manage.py migrate && manage.py ensure_admin
+db.sqlite3
+
+# Deployment prompt: contains a generated signing key.
+DEPLOY_PROMPT.md
+
+# Bootstrap lock, created at runtime while the first worker sets up.
+.bootstrap.lock
+CLAUDE_PROMPT.md
+INTERNSHIP_REPORT.md
+INTERNSHIP_REPORT.pdf
+INTERNSHIP_REPORT.html
