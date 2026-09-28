@@ -138,7 +138,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #
 # Default is sqlite so `python manage.py runserver` works on a machine with
 # nothing installed. This project's own .env sets DB_ENGINE=mysql explicitly.
-DB_ENGINE = os.getenv('DB_ENGINE', 'sqlite').strip().lower()
+DB_ENGINE = 'mysql'
 
 if DB_ENGINE in {'sqlite', 'sqlite3'}:
     DATABASES = {
@@ -156,7 +156,7 @@ if DB_ENGINE in {'sqlite', 'sqlite3'}:
         }
     }
 elif DB_ENGINE in {'mysql', 'mariadb'}:
-    DB_NAME = os.getenv('DB_NAME', 'pos_system')
+    DB_NAME = os.getenv('DB_NAME', 'pos_db')
 
     # Guard rail: the MySQL system schema must never hold application tables.
     if DB_NAME.strip().lower() in {'mysql', 'information_schema', 'performance_schema', 'sys'}:
