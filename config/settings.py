@@ -156,7 +156,7 @@ if DB_ENGINE in {'sqlite', 'sqlite3'}:
         }
     }
 elif DB_ENGINE in {'mysql', 'mariadb'}:
-    DB_NAME = os.getenv('DB_NAME', 'pos_db')
+    DB_NAME = os.getenv('DB_NAME', 'odelltec_pos_db')
 
     # Guard rail: the MySQL system schema must never hold application tables.
     if DB_NAME.strip().lower() in {'mysql', 'information_schema', 'performance_schema', 'sys'}:
@@ -169,8 +169,8 @@ elif DB_ENGINE in {'mysql', 'mariadb'}:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': DB_NAME,
-            'USER': os.getenv('DB_USER', 'root'),
-            'PASSWORD': os.getenv('DB_PASSWORD', ''),
+            'USER': os.getenv('DB_USER', 'odelltec_rasel'),
+            'PASSWORD': os.getenv('DB_PASSWORD', 'rasel@5437'),
             'HOST': os.getenv('DB_HOST', '127.0.0.1'),
             'PORT': os.getenv('DB_PORT', '3306'),
             # MySQL can only resolve named time zones (needed by every ``__date``
